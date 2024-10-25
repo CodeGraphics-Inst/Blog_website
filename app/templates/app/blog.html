@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sport Blogs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      main {
+        padding: 20px;
+      }
+
+      #blog-content {
+        background-color: #fff;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .blog-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .blog-meta {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 20px;
+      }
+
+      .blog-content {
+        font-size: 16px;
+        color: #333;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    </style>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">CG Sport</div>
+      <nav>
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </header>
+
+    <main>
+      <div id="blog-content">
+        <h2 class="blog-title">{{post.title}}</h2>
+        <div class="blog-meta">By Admin • {{post.date}}</div>
+        <img src="{{post.image.url}}" alt="{{post.title}}">
+        <p class="blog-content">{{post.details}}</p>
+      </div>
+    </main>
+    
+    <footer><p>&copy; 2024 by Codegraphics Design Team</p></footer>
+
+    <script>
+      // Sample blog post data
+
+      // Call the function to load the blog post when the page loads
+      document.addEventListener("DOMContentLoaded", loadBlogPost);
+    </script>
+  </body>
+</html>
