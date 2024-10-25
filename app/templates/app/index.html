@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Sport Blog</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -37,7 +37,34 @@
     </section>
     <section class="blog-posts" id="blog-posts">
       <!-- Blog posts will be rendered here via JavaScript -->
+      {% for post in posts %}
+      <a href="{% url 'blog' post.id %}">
+        <div class='blog-post'>
+          <img src="{{post.image.url}}" alt="{{post.title}}">
+          <div class="blog-content">
+              <div class="blog-meta">
+                  <span><b>Admin</b> {{post.date}}</span>
+                  <span><i class="fas fa-ellipsis-h"></i></span>
+              </div>
+              <h2>{{post.title}}</h2>
+              <p>{{post.details}}</p>
+              <div class="blog-meta">
+                  <span>{{post.views}} views</span>
+                  <span>{{post.likes}} likes</span>
+                  <div class="blog-actions">
+                      <span>{{post.likes}} <i class="fas fa-heart"></i></span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+      
     </section>
     <footer><p>&copy; 2024 by Codegraphics Design Team</p></footer>
+    <script type="text/javascript">
+      var post = "{{ post }}";
+    </script>
+    <script src="{% static '/app/script.js' %}" defer></script>
   </body>
 </html>
