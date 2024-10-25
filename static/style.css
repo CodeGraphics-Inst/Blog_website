@@ -1,0 +1,168 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-icons a {
+  color: white;
+  margin-left: 15px;
+}
+
+.social-icons a i {
+  font-size: 18px;
+}
+
+/* showcase section */
+.showcase {
+  background: url("/images/sport3.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.showcase-content h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+.showcase-content .lead {
+  font-size: 2rem;
+}
+/* Blog Posts section */
+.blog-posts {
+  padding: 3rem 12rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.blog-post {
+  display: flex;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 20px;
+}
+
+.blog-post img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.blog-content {
+  flex: 1;
+}
+
+.blog-content h2 {
+  color: #00bfff;
+}
+
+.blog-content p {
+  color: #999;
+  margin: 10px 0;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #777;
+}
+
+.blog-meta span {
+  font-size: 14px;
+}
+
+.blog-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.blog-actions span {
+  margin-left: 10px;
+  color: #777;
+  cursor: pointer;
+}
+
+.blog-actions i {
+  color: red;
+}
+.blog-post :hover {
+  color: #00bfff;
+  cursor: pointer;
+}
+footer {
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  padding: 1rem;
+  border-top: #777 2px solid;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .showcase-content h1 {
+    font-size: 40px;
+  }
+
+  .subscribe-box {
+    flex-direction: column;
+  }
+
+  .subscribe-box input,
+  .subscribe-box button {
+    width: 90%;
+    margin: 5px 0;
+  }
+  .social-icons {
+    display: none;
+  }
+  .blog-post {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-post img {
+    margin-bottom: 20px;
+  }
+
+  .blog-content {
+    text-align: center;
+  }
+}
